@@ -5,8 +5,12 @@
 
   //Code here
 
+var me = {
+  name: 'Jon-Michael',
+  age: 31,
+}
 
-
+// alert(me.name);
 
 //NEXT PROBLEM
 
@@ -14,7 +18,17 @@
 
 
 //Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday. Have the values to those keys be your favorite thing in that category.
+var favoriteThings = {
+  band: 'Sublime',
+  food: 'Chicken Nuggets',
+  person: 'Buddha',
+  book: 'Harry Potter',
+  movie: 'Deadpool',
+  holiday: 'Friday',
+  car: 'Porsche 911 Turbo',
+  brand: 'Patagonia'
 
+}
   //Code here
 
 
@@ -42,6 +56,15 @@ Set the value of that key to 'chapstick'.
 Using dot notation, add another key (or property) to your backPack object
 that is named color, with the value being the color of your backpack. */
 
+var backPack = {
+
+}
+
+var item = 'firstPocket'
+backPack[item] = 'chapstick'
+backPack.color = 'red'
+// alert(backPack)
+console.log(backPack)
   //Code here
 
 //After you do the above, alert your entire backPack object.
@@ -63,11 +86,22 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 
 //Create an 'alsoMe' object with the following properties name, age, height, gender, married, eyeColor, hairColor. Fill those properties in with the appropriate values.
+var alsoMe = {
+  name: 'Jon-Michael',
+  age: 31,
+  height: "5'9",
+  gender: 'male',
+  married: 'single',
+  eyeColor: 'blue',
+  hairColor: 'dirty blond'
 
+}
   //Code Here
 
 //Now, loop through your object and alert every value. *Tyler --> 24 --> 6'0 --> Male, etc etc
-
+for (var x in alsoMe) {
+  // alert(alsoMe[x]);
+}
   //Code Here
 
 
@@ -79,11 +113,21 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 
 //Create an Object called 'album' with 5 keys named different song titles that you make up, with the values being the length of each song.
+var album = {
+  fun: '3:32',
+  'not Fun': '3:32',
+  phone:'3:32',
+  mouse:'3:32',
+  light:'3:32'
 
+}
   //Code Here
 
 //Now, loop through your album object alerting every song title individually.
 
+for (var x in album) {
+  // alert(x);
+}
   //Code Here
 
 
@@ -96,10 +140,22 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 //Create an object called states that has 5 US states as properties with the values being their population (doesn't have to be accurate).
 
+var states = {
+  maine: '55,000',
+  kansas: '20,000',
+  texas: '44,000',
+  alaska: '24,000',
+  florida: '98,000'
+}
   //Code Here
 
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
 
+for (var x in states) {
+  if (states[x] > '30,000') {
+    // alert(x);
+  }
+}
   //Code Here
 
 
@@ -121,12 +177,18 @@ var user1 = {
 /*Above you're given a user object. Loop through the user object checking to make sure
 that each value is truthy. If it's not truthy, remove it from the object. */
 
+for (var x in user1) {
+  if (!user1[x]) {
+    delete user1[x];
+  }
+}
   //Code Here
 
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
   //Code Here
-
+user1.name = 'Jon-Michael'
+user1.username = 'jdreher15'
 
 
 
@@ -148,10 +210,13 @@ var user2 = {
 };
 //Let's say I, the user, decided to change my name and email address to the following
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
-
+user2.name = 'Tyler S. McGinnis'
+user2.email = 'tyler.mcginnis@devmounta.in'
   //Code Here
 
 //Now call the sayEmail method that's on the user object which will alert the users email
+
+// user2.sayEmail();
 
   //Code Here
 
@@ -163,8 +228,18 @@ var user2 = {
 
 
 
-//Create an empty object called methodCollection.
+//Create an empty object called methodCollection
 
+var methodCollection = {
+
+alertHello: function () {
+  alert('hello');
+},
+logHello: function () {
+  console.log('hello');
+}
+
+};
   //Code Here
 
 /*Now add two methods (functions that are properties on objects) to your methodCollection
@@ -174,7 +249,8 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
   //Code Here
 
 //Now call your alertHello and logHello methods.
-
+// methodCollection.alertHello();
+// methodCollection.logHello();
   //Code Here
 
 
@@ -186,6 +262,15 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 // Create a function called makePerson which takes in name, birthday, ssn as its
 // parameters and returns a new object with all of the information that you passed in.
 
+function makePerson(name, birthday, ssn) {
+
+  return newObject = {
+    name: name,
+    birthday: birthday,
+    ssn: ssn
+
+  };
+}
   //Code Here
 
 
@@ -195,6 +280,15 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 
 
 // Create a function called makeCard which takes in cardNumber, expirationDate, and securityCode to make a Credit Card object and returns that object so that whenever you invoke makeCard, you get a brand new credit card.
+
+function makeCard(cardNumber, expirationDate, securityCode) {
+  return newObject = {
+    cardNumber: cardNumber,
+    expirationDate: expirationDate,
+    securityCode: securityCode
+  };
+}
+
 
   //Code Here
 
@@ -208,5 +302,23 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
    Now, create a bindCard function that takes in a person object as its first parameter and a creditcard object as its second parameter.
    Have bindCard merge the two parameters together into a new object which contains all the properties from the person as well as the creditcard. While Object.assign would give you the answer, specRunner requires an answer without using it.
 */
+
+function bindCard (makePerson, makeCard) {
+
+var newObject = {}
+
+for (var x in makePerson) {
+  newObject[x] = makePerson[x];
+}
+for (var y in makeCard) {
+  newObject[y] = makeCard[y];
+}
+return newObject;
+}
+
+
+
+
+
 
   //Code Here
